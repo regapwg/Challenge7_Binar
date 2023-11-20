@@ -4,15 +4,15 @@ import com.example.challenge2_binar.api.APIClient
 import com.example.challenge2_binar.database.cartDb.SimpleDatabase
 import com.example.challenge2_binar.database.categoryDB.CategoryDatabase
 import com.example.challenge2_binar.database.menuDb.MenuDatabase
+import com.example.challenge2_binar.repository.CartRepository
 import com.example.challenge2_binar.repository.LocalData
 import com.example.challenge2_binar.repository.MenuRepository
 import com.example.challenge2_binar.repository.NetworkData
-import com.example.challenge2_binar.repository.CartRepository
 import com.example.challenge2_binar.util.ListViewSharedPreference
 import com.example.challenge2_binar.util.LoginSharedPreference
 import com.example.challenge2_binar.viewModel.DetailViewModel
-import com.example.challenge2_binar.viewModel.KeranjangViewModel
 import com.example.challenge2_binar.viewModel.HomeViewModel
+import com.example.challenge2_binar.viewModel.KeranjangViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -30,7 +30,7 @@ object KoinModule {
             factory { get<CategoryDatabase>().categoryDao }
 
             //API
-            single { APIClient.instance }
+            single { APIClient.endpointAPIService }
 
             //REPOSITORY
             factory { MenuRepository(get(),get()) }

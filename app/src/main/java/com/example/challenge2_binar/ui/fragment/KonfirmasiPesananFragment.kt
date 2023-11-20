@@ -1,18 +1,18 @@
 package com.example.challenge2_binar.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.challenge2_binar.adapter.KonfirmasiKeranjangAdapter
 import com.example.challenge2_binar.api.APIClient
-import com.example.challenge2_binar.databinding.FragmentKonfirmasiPesananBinding
 import com.example.challenge2_binar.api.order.Order
 import com.example.challenge2_binar.api.order.OrderRequest
 import com.example.challenge2_binar.api.order.OrderResponse
+import com.example.challenge2_binar.databinding.FragmentKonfirmasiPesananBinding
 import com.example.challenge2_binar.user.User
 import com.example.challenge2_binar.viewModel.KeranjangViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -70,7 +70,7 @@ class KonfirmasiPesananFragment : Fragment() {
                 orders = arrayListOrder
             )
 
-            APIClient.instance.postOrder(orderRequest).enqueue(object : Callback<OrderResponse> {
+            APIClient.endpointAPIService.postOrder(orderRequest).enqueue(object : Callback<OrderResponse> {
                 override fun onResponse(
                     call: Call<OrderResponse>,
                     response: Response<OrderResponse>
