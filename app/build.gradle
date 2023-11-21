@@ -33,13 +33,13 @@ android {
         release {
             minifyEnabled false
             debuggable true
-            buildConfigField "String","BASE_URL", "\"https://696e3f73-4c95-4f40-8801-1a210bcbd983.mock.pstmn.io\""
+            buildConfigField "String","BASE_URL", "\"https://696e3f73-4c95-4f40-8801-1a210bcbd983.mock.pstmn.io/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
         staging{
             debuggable true
-            buildConfigField "String","BASE_URL", "\"https://fb996541-96a6-42e9-98bf-76128f165926.mock.pstmn.io\""
+            buildConfigField "String","BASE_URL", "\"https://fb996541-96a6-42e9-98bf-76128f165926.mock.pstmn.io/\""
             signingConfig signingConfigs.debug
         }
     }
@@ -76,9 +76,16 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:22.2.0'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.5.1'
     implementation 'com.google.firebase:firebase-analytics-ktx:21.5.0'
-    implementation 'junit:junit:4.13.2'
+
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    implementation 'androidx.test:runner:1.5.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation "com.google.truth:truth:1.0.1"
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+
+
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation'androidx.recyclerview:recyclerview:version_code'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
